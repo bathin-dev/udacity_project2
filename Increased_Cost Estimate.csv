@@ -1,0 +1,50 @@
+Group hierarchy	Region	Description	Service	Upfront	Monthly	First 12 months total	Currency	Configuration summary
+My Estimate	US East (N. Virginia)	Udacity_project2_VPC_Estimate	VPN Connection	0	497.04	5964.48	USD	"Working days per month (22), Number of subnet associations (2), Number of Site-to-Site VPN Connections (5)"
+My Estimate	US East (N. Virginia)	Udacity_project2_VPC_Estimate	Network Address Translation (NAT) Gateway	0	70.2	842.4	USD	Number of NAT Gateways (2)
+My Estimate	US East (N. Virginia)	Udacity_project2_VPC_Estimate	Data Transfer	0	3072	36864	USD	"DT Inbound: Internet (5 TB per month), DT Outbound: Internet (30 TB per month), DT Intra-Region: (20 TB per month), Data transfer cost (3072)"
+My Estimate	US East (N. Virginia)	Udacity_project2_VPC_Estimate	Gateway Load Balancer	0	306.6	3679.2	USD	"Number of Availability Zones that Gateway Load Balancer is deployed to (2), Number of Gateway Load Balancer Endpoints (2), Total processed bytes (50 GB per hour), Average number of new connections/flows (10 per second), Average connection/flow duration (1 seconds)"
+My Estimate	US East (N. Virginia)	Udacity_project2_RDS	Amazon RDS for MySQL	0	2868.2	34418.4	USD	"Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (3 TB), Quantity (2), Instance type (db.m1.xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment option (Multi-AZ), Pricing strategy (OnDemand), Additional backup storage (1 TB)"
+My Estimate	US East (N. Virginia)		Application Load Balancer	0	149.65	1795.8	USD	Number of Application Load Balancers (2)
+My Estimate	US East (N. Virginia)		Network Load Balancer	0	470.85	5650.2	USD	"Number of Network Load Balancers (2), Processed bytes per NLB for TCP (30 GB per hour), Average number of new TCP connections (30 per second), Average TCP connection duration (2 seconds), Processed bytes per NLB for UDP (10 GB per hour), Average number of new UDP Flows (20 per second), Processed bytes per NLB for TLS (10 GB per hour), Average number of new TLS connections (20 per second)"
+My Estimate	US East (N. Virginia)	Udacity_projec2_EC2_WEB	Amazon EC2	0	6563.26	78759.12	USD	"Operating system (Linux), Storage amount (2 TB), DT Inbound: Internet (10 TB per month), DT Outbound: Internet (10 TB per month), DT Intra-Region: (10 TB per month), Workload (Consistent, Number of instances: 8), Advance EC2 instance (c4.4xlarge), Pricing strategy (On-Demand and Reserved 1 Year  None upfront), Snapshot Frequency (2x Daily), Amount changed per snapshot (3 GB)"
+My Estimate	US East (N. Virginia)	Udacity_project2_CloudFront	Amazon CloudFront	0	181.08	2172.96	USD	"Data transfer out to internet (2 TB per month), Data transfer out to origin (100 GB per month), Number of requests (HTTPS) (5000000 per month)"
+My Estimate	US East (N. Virginia)	Udacity_projec2_S3	S3 Standard	0	1.44	17.28	USD	S3 Standard storage (50 GB per month)
+My Estimate	US East (N. Virginia)	Udacity_projec2_S3	S3 Glacier Flexible Retrieval	0	0.72	8.64	USD	"S3 Glacier Average Object Size (16 MB), S3 Glacier storage (200 GB per month)"
+My Estimate	US East (N. Virginia)	Udacity_projec2_S3	Data Transfer	0	0	0	USD	"DT Inbound: Internet (100 TB per month), DT Outbound: Amazon CloudFront (100 TB per month)"
+My Estimate	US East (N. Virginia)	Udacity_project2_EC2_APP	Amazon EC2	0	4399.724	52796.69	USD	"Operating system (Linux), Storage amount (2 TB), DT Inbound: Internet (0 TB per month), DT Outbound: Internet (10 TB per month), DT Intra-Region: (0 TB per month), Workload (Consistent, Number of instances: 8), Advance EC2 instance (t4g.2xlarge), Pricing strategy (EC2 Instance Savings Plans 1 Year  None upfront), Snapshot Frequency (2x Daily), Amount changed per snapshot (3 GB)"
+My Estimate	US East (N. Virginia)		Amazon Route 53	0	3	36	USD	Hosted Zones (2)
+My Estimate	US East (N. Virginia)		Amazon Elastic IP	0	7.7	92.4	USD	"Number of EC2 instances (2), Number of EIPs per instance (2), Number of EIP remaps (2)"
+								
+								
+								
+Acknowledgement								
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."								
+								
+								
+Web server:(Increase server's performance)								
+num of instance: 4 => 8								
+type: c4.2xlarge => c4.4xlarge								
+EBS storage amount: 1TB => 2TB								
+								
+App server(Increase server's performance)								
+type: t4g.xlarge => t4g.2xlarge								
+EBS storage amount: 1TB => 2TB								
+								
+RDS[MySQL] (Increate server and storage performance								
+Number of instance:2=>4								
+Instance type of RDS: db.m1.large=>db.m1.xlarge								
+Storage: 1TB ->3TB								
+								
+"VPC(Increate network performance, availablily):"								
+Increase data transfer throughput:								
+>Intra-Region Data Transfer:10TB per month =>20TB per month 								
+>Outbound Data Transfer: 20TB per month =>40TB per month 								
+								
+								
+Elastic Load Balancing (Increate availablily):								
+Network Load Balancer: Increase setting of TCP Traffic								
+>Processed bytes per NLB for TCP: 5GB per hour => 30 GB per hour								
+>Number of Network Load Balancers:1=>2								
+Application Load Balancer: Increase setting of LCU								
+>Processed bytes (EC2 Instances and IP addresses as targets):5 => 10								
+>Number of Application Load Balancers:1=>2								
